@@ -9,6 +9,8 @@ from a reserve funded before the sale.
 Two scripted buyer agents use synthetic inventory and shipping data. No model,
 mainnet funds, customer data, or Daybreak access is needed.
 
+**Watch:** [42-second demo video](RecallPay_demo.mp4) · [public X demo post](https://x.com/lutascosmi89050/status/2121662390345613782) · [transaction evidence](results/demo.html)
+
 ## Judge in one command
 
 On Linux x64 or macOS Apple Silicon with Node.js 20+ and npm, run:
