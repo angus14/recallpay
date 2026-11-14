@@ -1,0 +1,668 @@
+{
+  "project": "RecallPay",
+  "startedAt": "2026-11-14T17:31:03.432Z",
+  "status": "passed",
+  "network": "Local NEAR Sandbox",
+  "data": "Synthetic warehouse inventory and shipping fixtures",
+  "agents": "Two scripted buyer agents; no language model is used.",
+  "transactions": [
+    {
+      "label": "Publish inventory version",
+      "hash": "CieB2tpLQXYQEpNCnjX9WuqpaQUu4ujV9aXdhnWFZuhG",
+      "succeeded": true,
+      "durationMs": 1513,
+      "gasBurnt": "2193203919276",
+      "failures": [],
+      "events": [
+        {
+          "standard": "recallpay",
+          "version": "1.0.0",
+          "event": "version_published",
+          "data": [
+            {
+              "version_id": "ccc42ee12168c20b1305dbeef8c82d0506f6d35393d546011586526e220aa9ea",
+              "price": "200000000000000000000000",
+              "warranty_secs": "3600"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Publish independent shipping version",
+      "hash": "GXa3QUrxGb4PQNHFBPYg2fLRqMvgDVgD3bnVhoBXcxb5",
+      "succeeded": true,
+      "durationMs": 2012,
+      "gasBurnt": "2209305875202",
+      "failures": [],
+      "events": [
+        {
+          "standard": "recallpay",
+          "version": "1.0.0",
+          "event": "version_published",
+          "data": [
+            {
+              "version_id": "ef02b93df22f9c6f2e22ec0299b44840c02a4c8c220af81ee697cb86985b8033",
+              "price": "100000000000000000000000",
+              "warranty_secs": "3600"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Provider funds 1 NEAR refund reserve",
+      "hash": "DEBWWs9owBHCQaxvXojE7t6vpSzRcMi85fyJ5aLyFqAX",
+      "succeeded": true,
+      "durationMs": 1513,
+      "gasBurnt": "1759012251648",
+      "failures": [],
+      "events": [
+        {
+          "standard": "recallpay",
+          "version": "1.0.0",
+          "event": "reserve_funded",
+          "data": [
+            {
+              "amount": "1000000000000000000000000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Alice buys inventory for 0.2 NEAR",
+      "hash": "2zUThAnM6seYDXzBfRPWQQXtDY4kTR3V8kK6bVs3bBhU",
+      "succeeded": true,
+      "durationMs": 2011,
+      "gasBurnt": "2693765857966",
+      "failures": [],
+      "events": [
+        {
+          "standard": "recallpay",
+          "version": "1.0.0",
+          "event": "purchase",
+          "data": [
+            {
+              "receipt_id": "inventory",
+              "buyer_id": "alice.test.near",
+              "version_id": "ccc42ee12168c20b1305dbeef8c82d0506f6d35393d546011586526e220aa9ea",
+              "price": "200000000000000000000000",
+              "purchased_at": "1794677483472717738",
+              "expires_at": "1794681083472717738",
+              "status": "Active"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Alice buys shipping data for 0.1 NEAR",
+      "hash": "2zJYDZsCz7Y4iKxRc5ztebfDYJwYxreEgVAqhcYuXQSv",
+      "succeeded": true,
+      "durationMs": 2017,
+      "gasBurnt": "2696836707717",
+      "failures": [],
+      "events": [
+        {
+          "standard": "recallpay",
+          "version": "1.0.0",
+          "event": "purchase",
+          "data": [
+            {
+              "receipt_id": "shipping",
+              "buyer_id": "alice.test.near",
+              "version_id": "ef02b93df22f9c6f2e22ec0299b44840c02a4c8c220af81ee697cb86985b8033",
+              "price": "100000000000000000000000",
+              "purchased_at": "1794677485292871194",
+              "expires_at": "1794681085292871194",
+              "status": "Active"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Bob buys inventory for 0.2 NEAR",
+      "hash": "2YVVi9wW25nc8soFWW5cYipjad23dSaNmN4oaaxwUmgo",
+      "succeeded": true,
+      "durationMs": 1515,
+      "gasBurnt": "2775007814932",
+      "failures": [],
+      "events": [
+        {
+          "standard": "recallpay",
+          "version": "1.0.0",
+          "event": "purchase",
+          "data": [
+            {
+              "receipt_id": "inventory",
+              "buyer_id": "bob.test.near",
+              "version_id": "ccc42ee12168c20b1305dbeef8c82d0506f6d35393d546011586526e220aa9ea",
+              "price": "200000000000000000000000",
+              "purchased_at": "1794677487118994201",
+              "expires_at": "1794681087118994201",
+              "status": "Active"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Bob buys shipping data for 0.1 NEAR",
+      "hash": "CoMqjK5C23aaJK2LQkbvfesPWsbmjqUA4wQx4a2T6uRd",
+      "succeeded": true,
+      "durationMs": 2016,
+      "gasBurnt": "2727817435089",
+      "failures": [],
+      "events": [
+        {
+          "standard": "recallpay",
+          "version": "1.0.0",
+          "event": "purchase",
+          "data": [
+            {
+              "receipt_id": "shipping",
+              "buyer_id": "bob.test.near",
+              "version_id": "ef02b93df22f9c6f2e22ec0299b44840c02a4c8c220af81ee697cb86985b8033",
+              "price": "100000000000000000000000",
+              "purchased_at": "1794677488947118693",
+              "expires_at": "1794681088947118693",
+              "status": "Active"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Provider withdraws earned 0.6 NEAR before the recall",
+      "hash": "B8PHWY2ekwPE7GETNobE2h9KBqet5m9Ln3Zq4b5WGbzh",
+      "succeeded": true,
+      "durationMs": 3518,
+      "gasBurnt": "5206339314887",
+      "failures": [],
+      "events": [
+        {
+          "standard": "recallpay",
+          "version": "1.0.0",
+          "event": "withdrawal_pending",
+          "data": [
+            {
+              "withdrawal_id": "0",
+              "receiver_id": "seller-cash.test.near",
+              "amount": "600000000000000000000000"
+            }
+          ]
+        },
+        {
+          "standard": "recallpay",
+          "version": "1.0.0",
+          "event": "withdrawal_paid",
+          "data": [
+            {
+              "withdrawal_id": "0",
+              "beneficiary": "provider.test.near",
+              "amount": "600000000000000000000000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Provider recalls inventory: stock was 8, not 80",
+      "hash": "D4aL6nVj3JdHTUCxoiz79V4Hor2mVMVTb2WXzdnTeM3A",
+      "succeeded": true,
+      "durationMs": 1512,
+      "gasBurnt": "2116937206864",
+      "failures": [],
+      "events": [
+        {
+          "standard": "recallpay",
+          "version": "1.0.0",
+          "event": "version_recalled",
+          "data": [
+            {
+              "version_id": "ccc42ee12168c20b1305dbeef8c82d0506f6d35393d546011586526e220aa9ea",
+              "reason": "Warehouse correction: solar-controller stock is 8, not 80.",
+              "recalled_at": "1794677495647904987"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Stale client tries to pay using recalled inventory",
+      "hash": "97Jjn3cGyfGxaUXpvqoA6MCnKe5SZDKTD2ysHWv5i2mM",
+      "succeeded": false,
+      "durationMs": 2521,
+      "gasBurnt": "2136219928045",
+      "failures": [
+        {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: ERR_DEPENDENCY_RECALLED"
+              }
+            }
+          }
+        },
+        {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: ERR_DEPENDENCY_RECALLED"
+              }
+            }
+          }
+        }
+      ],
+      "events": []
+    },
+    {
+      "label": "Shipping estimate A: pay next action",
+      "hash": "AFYcjPTgksNmDuJoQ45Lc36ftRKrUYfUXBBNK1kG2yjP",
+      "succeeded": true,
+      "durationMs": 2013,
+      "gasBurnt": "2651825122679",
+      "failures": [],
+      "events": [
+        {
+          "standard": "recallpay",
+          "version": "1.0.0",
+          "event": "action_paid",
+          "data": [
+            {
+              "buyer_id": "alice.test.near",
+              "recipient_id": "processor.test.near",
+              "amount": "10000000000000000000000",
+              "receipt_ids": [
+                "shipping"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Shipping estimate B: pay next action",
+      "hash": "DvYnugkh9tRu4aFoYSsyxn7sNcEMdnPcvGqiaBAGeiMn",
+      "succeeded": true,
+      "durationMs": 1513,
+      "gasBurnt": "2603009431443",
+      "failures": [],
+      "events": [
+        {
+          "standard": "recallpay",
+          "version": "1.0.0",
+          "event": "action_paid",
+          "data": [
+            {
+              "buyer_id": "bob.test.near",
+              "recipient_id": "processor.test.near",
+              "amount": "10000000000000000000000",
+              "receipt_ids": [
+                "shipping"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Keeper claims alice's refund to its fixed beneficiary",
+      "hash": "8exzPTYigwyUH4kYXvsfwk3Qc96PXsFVgWUvTQ5k7d9B",
+      "succeeded": true,
+      "durationMs": 1512,
+      "gasBurnt": "2391342862328",
+      "failures": [],
+      "events": [
+        {
+          "standard": "recallpay",
+          "version": "1.0.0",
+          "event": "refund_credited",
+          "data": [
+            {
+              "buyer_id": "alice.test.near",
+              "receipt_id": "inventory",
+              "amount": "200000000000000000000000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "alice withdraws refund as real NEAR",
+      "hash": "2PzrUmxTkZdSRPyduPmVowCh3RHNYaAmUubyiEQj96kK",
+      "succeeded": true,
+      "durationMs": 3015,
+      "gasBurnt": "5220094986378",
+      "failures": [],
+      "events": [
+        {
+          "standard": "recallpay",
+          "version": "1.0.0",
+          "event": "withdrawal_pending",
+          "data": [
+            {
+              "withdrawal_id": "1",
+              "receiver_id": "alice-cash.test.near",
+              "amount": "200000000000000000000000"
+            }
+          ]
+        },
+        {
+          "standard": "recallpay",
+          "version": "1.0.0",
+          "event": "withdrawal_paid",
+          "data": [
+            {
+              "withdrawal_id": "1",
+              "beneficiary": "alice.test.near",
+              "amount": "200000000000000000000000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Keeper claims bob's refund to its fixed beneficiary",
+      "hash": "6Tk9gm7CQSb7QrnGQzKVSL6bgtZ3FzSAaeo7eKS3KzxQ",
+      "succeeded": true,
+      "durationMs": 2015,
+      "gasBurnt": "2390013920122",
+      "failures": [],
+      "events": [
+        {
+          "standard": "recallpay",
+          "version": "1.0.0",
+          "event": "refund_credited",
+          "data": [
+            {
+              "buyer_id": "bob.test.near",
+              "receipt_id": "inventory",
+              "amount": "200000000000000000000000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "bob withdraws refund as real NEAR",
+      "hash": "5ChJrhJer6PQcomtz6nr8Rw1RLdBL2ivu5h57qyjDzQg",
+      "succeeded": true,
+      "durationMs": 3016,
+      "gasBurnt": "5215182393556",
+      "failures": [],
+      "events": [
+        {
+          "standard": "recallpay",
+          "version": "1.0.0",
+          "event": "withdrawal_pending",
+          "data": [
+            {
+              "withdrawal_id": "2",
+              "receiver_id": "bob-cash.test.near",
+              "amount": "200000000000000000000000"
+            }
+          ]
+        },
+        {
+          "standard": "recallpay",
+          "version": "1.0.0",
+          "event": "withdrawal_paid",
+          "data": [
+            {
+              "withdrawal_id": "2",
+              "beneficiary": "bob.test.near",
+              "amount": "200000000000000000000000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Repeated refund attempt",
+      "hash": "HVaV7usZNDxFAa6yQk5uFPdnxZjNNTTXyg37TzaptZfK",
+      "succeeded": false,
+      "durationMs": 1513,
+      "gasBurnt": "1589321910727",
+      "failures": [
+        {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: ERR_ALREADY_SETTLED"
+              }
+            }
+          }
+        },
+        {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: ERR_ALREADY_SETTLED"
+              }
+            }
+          }
+        }
+      ],
+      "events": []
+    }
+  ],
+  "checks": [
+    {
+      "label": "The demo vault has no upgrade or deletion access key",
+      "passed": true
+    },
+    {
+      "label": "Provider earned fees were actually paid out before recall",
+      "passed": true
+    },
+    {
+      "label": "Every purchase has fully locked coverage",
+      "passed": true
+    },
+    {
+      "label": "All three affected jobs paused, including the derived job",
+      "passed": true
+    },
+    {
+      "label": "Both unrelated shipping jobs remain ready",
+      "passed": true
+    },
+    {
+      "label": "Onchain gate rejects the stale client payment",
+      "passed": true
+    },
+    {
+      "label": "Blocked payment created no processor credit",
+      "passed": true
+    },
+    {
+      "label": "Shipping estimate A completed its next paid action",
+      "passed": true
+    },
+    {
+      "label": "Shipping estimate B completed its next paid action",
+      "passed": true
+    },
+    {
+      "label": "Unrelated jobs paid exactly 0.02 NEAR in total",
+      "passed": true
+    },
+    {
+      "label": "alice was credited exactly its 0.2 NEAR fee",
+      "passed": true
+    },
+    {
+      "label": "alice's refund arrived at its separate wallet",
+      "passed": true
+    },
+    {
+      "label": "bob was credited exactly its 0.2 NEAR fee",
+      "passed": true
+    },
+    {
+      "label": "bob's refund arrived at its separate wallet",
+      "passed": true
+    },
+    {
+      "label": "Duplicate claim rejected",
+      "passed": true
+    },
+    {
+      "label": "All remaining settled liabilities remain backed",
+      "passed": true
+    }
+  ],
+  "jobs": [
+    {
+      "agent": "alice.test.near",
+      "id": "Inventory research A",
+      "receipts": [
+        "inventory"
+      ],
+      "parents": [],
+      "status": "paused",
+      "reasons": [
+        {
+          "receiptId": "inventory",
+          "versionId": "ccc42ee12168c20b1305dbeef8c82d0506f6d35393d546011586526e220aa9ea",
+          "reason": "Warehouse correction: solar-controller stock is 8, not 80."
+        }
+      ]
+    },
+    {
+      "agent": "alice.test.near",
+      "id": "Procurement plan A",
+      "receipts": [
+        "inventory"
+      ],
+      "parents": [
+        "Inventory research A"
+      ],
+      "status": "paused",
+      "reasons": [
+        {
+          "receiptId": "inventory",
+          "versionId": "ccc42ee12168c20b1305dbeef8c82d0506f6d35393d546011586526e220aa9ea",
+          "reason": "Warehouse correction: solar-controller stock is 8, not 80."
+        }
+      ]
+    },
+    {
+      "agent": "alice.test.near",
+      "id": "Shipping estimate A",
+      "receipts": [
+        "shipping"
+      ],
+      "parents": [],
+      "status": "ready",
+      "reasons": []
+    },
+    {
+      "agent": "bob.test.near",
+      "id": "Inventory research B",
+      "receipts": [
+        "inventory"
+      ],
+      "parents": [],
+      "status": "paused",
+      "reasons": [
+        {
+          "receiptId": "inventory",
+          "versionId": "ccc42ee12168c20b1305dbeef8c82d0506f6d35393d546011586526e220aa9ea",
+          "reason": "Warehouse correction: solar-controller stock is 8, not 80."
+        }
+      ]
+    },
+    {
+      "agent": "bob.test.near",
+      "id": "Shipping estimate B",
+      "receipts": [
+        "shipping"
+      ],
+      "parents": [],
+      "status": "ready",
+      "reasons": []
+    }
+  ],
+  "limitations": [
+    "Provider-declared recalls only. Data truth is not automatically verified.",
+    "Coverage refunds the purchase fee; gas and storage fees are excluded.",
+    "Only participating jobs with complete declared dependencies can be paused.",
+    "A recall cannot undo actions authorized before it, external transactions, or delivered work.",
+    "Native NEAR only. No crosschain or confidential execution integration is claimed.",
+    "A failed withdrawal callback can leave a pending operation; no timeout-based release is provided.",
+    "Prototype has no production audit or demand validation."
+  ],
+  "node": {
+    "build": "2.6.2",
+    "commit": "2f9ddb711ebd94a306eaec06030d87ef8dfc51fa",
+    "rustc_version": "1.85.0",
+    "version": "2.6.2"
+  },
+  "versions": {
+    "recalled": "ccc42ee12168c20b1305dbeef8c82d0506f6d35393d546011586526e220aa9ea",
+    "healthy": "ef02b93df22f9c6f2e22ec0299b44840c02a4c8c220af81ee697cb86985b8033"
+  },
+  "accounts": {
+    "provider": "provider.test.near",
+    "alice": "alice.test.near",
+    "bob": "bob.test.near",
+    "contract": "recallpay.test.near"
+  },
+  "contractAccessKeys": [],
+  "beforeRecall": {
+    "provider_id": "provider.test.near",
+    "reserve_free": "400000000000000000000000",
+    "reserve_locked": "600000000000000000000000",
+    "withdrawable_total": "100440000000000000000000",
+    "withdrawals_pending": "0",
+    "refunded_total": "0",
+    "receipt_count": "4",
+    "version_count": 2
+  },
+  "recallToAllGuardsMs": 1541,
+  "refunds": [
+    {
+      "buyer": "alice.test.near",
+      "receiver": "alice-cash.test.near",
+      "amount": "200000000000000000000000"
+    },
+    {
+      "buyer": "bob.test.near",
+      "receiver": "bob-cash.test.near",
+      "amount": "200000000000000000000000"
+    }
+  ],
+  "finalStats": {
+    "provider_id": "provider.test.near",
+    "reserve_free": "400000000000000000000000",
+    "reserve_locked": "200000000000000000000000",
+    "withdrawable_total": "159640000000000000000000",
+    "withdrawals_pending": "0",
+    "refunded_total": "400000000000000000000000",
+    "receipt_count": "4",
+    "version_count": 2
+  },
+  "contractBalance": {
+    "total": "10779165139401793800000003",
+    "stateStaked": "1801810000000000000000000",
+    "staked": "0",
+    "available": "8977355139401793800000003"
+  },
+  "summary": {
+    "affectedJobsPaused": 3,
+    "unaffectedJobsPaid": 2,
+    "refundedYocto": "400000000000000000000000",
+    "providerFeesAlreadyWithdrawnYocto": "600000000000000000000000",
+    "failedExpectedAttempts": 2,
+    "checksPassed": 16
+  },
+  "completedAt": "2026-11-14T17:31:57.596Z"
+}

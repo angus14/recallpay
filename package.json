@@ -1,0 +1,23 @@
+{
+  "name": "recallpay",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Recall paid data, pause dependent agent jobs, and refund protected purchases on NEAR.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "demo": "node scripts/local.mjs scripts/demo.mjs",
+    "test": "node scripts/local.mjs --test --test-reporter=tap --test-concurrency=1 tests/*.test.mjs",
+    "verify": "npm run build && npm test && npm run demo"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "near-workspaces": "5.0.0"
+  },
+  "devDependencies": {
+    "binaryen": "123.0.0",
+    "wabt": "1.0.37"
+  }
+}

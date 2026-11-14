@@ -1,0 +1,9 @@
+{
+  "integration_checks": 19,
+  "node_test_cases_including_parent": 20,
+  "passed": 20,
+  "failed": 0,
+  "skipped": 0,
+  "runtime": "NEAR Sandbox 2.6.2",
+  "evidence": "bash run.sh writes results/test-run.log and prints # pass 20, # fail 0"
+}

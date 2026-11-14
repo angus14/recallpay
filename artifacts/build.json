@@ -1,0 +1,18 @@
+{
+  "compiler": "cargo 1.86.0 (adf9b6ad1 2025-02-28)",
+  "rust": "1.86.0",
+  "nearSdk": "5.24.1",
+  "nearSys": "0.2.7",
+  "binaryen": "123.0.0",
+  "target": "wasm32-unknown-unknown",
+  "wasmSha256": "e52da9ae7a7b202996a88968bb4ada2ee58fd331db0792166f0ed95f9746acc5",
+  "sourceSha256": {
+    "contract/src/lib.rs": "2865e35017eabe7ee88ef9e0a5c417f6faf3870b2b4b60ae8eb4743d7e66ce30",
+    "contract/Cargo.toml": "64af203a3f258eb2178f796a81314bb87dcf078498d9daa6a9221d77c0e82b94",
+    "contract/Cargo.lock": "0bee5339565f8090180fe3b7e68d87dad81b852dd8fc7e743c29632580ac9244",
+    "rust-toolchain.toml": "ff11a6905c76d471533f48283f8d87e6075573283f8c209860981a94d7df3926",
+    ".cargo/config.toml": "00b0cad44e4f5e34afbc82e334f80e8beafdb02625fa5735aac359e6f57b501b",
+    "scripts/build.mjs": "1ed8bc630f370bf1f4e2e7762b20fa0e2ff4225623f3cdeeee0f108f3003d498",
+    "package-lock.json": "9e6ab9d0913e2063124163b18d833bcd0a1f50970423fad38acb52bb0cb5807e"
+  }
+}

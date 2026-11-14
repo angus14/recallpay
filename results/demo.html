@@ -1,0 +1,303 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RecallPay — executed demonstration</title><style>
+  :root{color-scheme:light}*{box-sizing:border-box}body{margin:0;background:#f5f6f2;color:#172b26;font:16px/1.55 system-ui,sans-serif}main{max-width:1120px;margin:0 auto;padding:56px 24px}header{border-top:5px solid #15a477;padding-top:28px}h1{font-size:54px;letter-spacing:-2px;margin:12px 0}h2{font-size:25px;margin:42px 0 16px}.eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:750;color:#447264}.intro{max-width:760px;font-size:20px;color:#52615a}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:30px 0}.card{background:white;border:1px solid #d9e1d9;border-radius:12px;padding:24px}.number{font-size:38px;font-weight:700;line-height:1.2}.label{font-size:14px;color:#63756b;margin-top:8px}.banner{border:1px solid #b7d9c9;background:#e6f4ec;padding:16px 20px;border-radius:10px}.tablewrap{overflow:auto;background:white;border:1px solid #d9e1d9;border-radius:12px}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:16px;text-align:left;border-bottom:1px solid #e5e9e3}th{color:#64756c;font-size:12px;text-transform:uppercase;letter-spacing:1px}.tag{padding:4px 9px;border-radius:20px;font-weight:650}.paused{background:#fff0d4;color:#8b5902}.ready{background:#def4e7;color:#13643d}details{border:1px solid #d9e1d9;background:#fff;border-radius:9px;margin:8px 0}summary{padding:16px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px}small{margin-left:auto;color:#697a6f}.dot{width:9px;height:9px;display:inline-block;border-radius:50%;flex-shrink:0}.ok{background:#18a572}.reject{background:#d29a33}pre{margin:0 16px 20px;padding:16px;background:#f5f7f4;overflow:auto;font-size:12px}.mono{font:12px ui-monospace,monospace;padding:0 16px;overflow-wrap:anywhere}li{margin:7px 0}.muted{color:#64756c;font-size:13px}footer{border-top:1px solid #d9e1d9;margin-top:38px;padding-top:20px}@media(max-width:700px){.grid{grid-template-columns:1fr 1fr}h1{font-size:42px}summary{flex-wrap:wrap}small{width:100%;margin-left:20px}}
+  </style><main><header><div class="eyebrow">RecallPay / executed prototype / passed</div><h1>Bad data. Contained.</h1><p class="intro">Recall an exact data version, pause dependent agent jobs, and refund protected purchases from a reserve funded before sale.</p><p class="muted">Local NEAR Sandbox · nearcore 2.6.2 · 2026-11-14T17:31:57.596Z</p></header>
+  <div class="grid"><div class="card"><div class="number">3</div><div class="label">affected jobs paused</div></div><div class="card"><div class="number">2</div><div class="label">independent jobs paid</div></div><div class="card"><div class="number">0.4 Ⓝ</div><div class="label">refunds received in wallets</div></div><div class="card"><div class="number">16/16</div><div class="label">demonstration checks passed</div></div></div>
+  <div class="banner">The provider withdrew 0.6 NEAR in earned fees <strong>before</strong> recalling the inventory. Refunds were then paid from its separate prefunded reserve.</div>
+  <h2>Which jobs were affected?</h2><div class="tablewrap"><table><thead><tr><th>Job</th><th>Buyer agent</th><th>State</th><th>Reason</th></tr></thead><tbody><tr><td>Inventory research A</td><td>alice.test.near</td><td><span class="tag paused">paused</span></td><td>Warehouse correction: solar-controller stock is 8, not 80.</td></tr><tr><td>Procurement plan A</td><td>alice.test.near</td><td><span class="tag paused">paused</span></td><td>Warehouse correction: solar-controller stock is 8, not 80.</td></tr><tr><td>Shipping estimate A</td><td>alice.test.near</td><td><span class="tag ready">ready</span></td><td>Independent data version</td></tr><tr><td>Inventory research B</td><td>bob.test.near</td><td><span class="tag paused">paused</span></td><td>Warehouse correction: solar-controller stock is 8, not 80.</td></tr><tr><td>Shipping estimate B</td><td>bob.test.near</td><td><span class="tag ready">ready</span></td><td>Independent data version</td></tr></tbody></table></div>
+  <h2>Transaction evidence</h2><p class="muted">Expand any step for the actual local transaction hash and contract events. Rejections below are intentional checks.</p><details><summary><span class="dot ok"></span>Publish inventory version<small>Committed</small></summary><p class="mono">Local transaction: CieB2tpLQXYQEpNCnjX9WuqpaQUu4ujV9aXdhnWFZuhG</p><pre>[
+  {
+    &quot;standard&quot;: &quot;recallpay&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;event&quot;: &quot;version_published&quot;,
+    &quot;data&quot;: [
+      {
+        &quot;version_id&quot;: &quot;ccc42ee12168c20b1305dbeef8c82d0506f6d35393d546011586526e220aa9ea&quot;,
+        &quot;price&quot;: &quot;200000000000000000000000&quot;,
+        &quot;warranty_secs&quot;: &quot;3600&quot;
+      }
+    ]
+  }
+]</pre></details><details><summary><span class="dot ok"></span>Publish independent shipping version<small>Committed</small></summary><p class="mono">Local transaction: GXa3QUrxGb4PQNHFBPYg2fLRqMvgDVgD3bnVhoBXcxb5</p><pre>[
+  {
+    &quot;standard&quot;: &quot;recallpay&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;event&quot;: &quot;version_published&quot;,
+    &quot;data&quot;: [
+      {
+        &quot;version_id&quot;: &quot;ef02b93df22f9c6f2e22ec0299b44840c02a4c8c220af81ee697cb86985b8033&quot;,
+        &quot;price&quot;: &quot;100000000000000000000000&quot;,
+        &quot;warranty_secs&quot;: &quot;3600&quot;
+      }
+    ]
+  }
+]</pre></details><details><summary><span class="dot ok"></span>Provider funds 1 NEAR refund reserve<small>Committed</small></summary><p class="mono">Local transaction: DEBWWs9owBHCQaxvXojE7t6vpSzRcMi85fyJ5aLyFqAX</p><pre>[
+  {
+    &quot;standard&quot;: &quot;recallpay&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;event&quot;: &quot;reserve_funded&quot;,
+    &quot;data&quot;: [
+      {
+        &quot;amount&quot;: &quot;1000000000000000000000000&quot;
+      }
+    ]
+  }
+]</pre></details><details><summary><span class="dot ok"></span>Alice buys inventory for 0.2 NEAR<small>Committed</small></summary><p class="mono">Local transaction: 2zUThAnM6seYDXzBfRPWQQXtDY4kTR3V8kK6bVs3bBhU</p><pre>[
+  {
+    &quot;standard&quot;: &quot;recallpay&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;event&quot;: &quot;purchase&quot;,
+    &quot;data&quot;: [
+      {
+        &quot;receipt_id&quot;: &quot;inventory&quot;,
+        &quot;buyer_id&quot;: &quot;alice.test.near&quot;,
+        &quot;version_id&quot;: &quot;ccc42ee12168c20b1305dbeef8c82d0506f6d35393d546011586526e220aa9ea&quot;,
+        &quot;price&quot;: &quot;200000000000000000000000&quot;,
+        &quot;purchased_at&quot;: &quot;1794677483472717738&quot;,
+        &quot;expires_at&quot;: &quot;1794681083472717738&quot;,
+        &quot;status&quot;: &quot;Active&quot;
+      }
+    ]
+  }
+]</pre></details><details><summary><span class="dot ok"></span>Alice buys shipping data for 0.1 NEAR<small>Committed</small></summary><p class="mono">Local transaction: 2zJYDZsCz7Y4iKxRc5ztebfDYJwYxreEgVAqhcYuXQSv</p><pre>[
+  {
+    &quot;standard&quot;: &quot;recallpay&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;event&quot;: &quot;purchase&quot;,
+    &quot;data&quot;: [
+      {
+        &quot;receipt_id&quot;: &quot;shipping&quot;,
+        &quot;buyer_id&quot;: &quot;alice.test.near&quot;,
+        &quot;version_id&quot;: &quot;ef02b93df22f9c6f2e22ec0299b44840c02a4c8c220af81ee697cb86985b8033&quot;,
+        &quot;price&quot;: &quot;100000000000000000000000&quot;,
+        &quot;purchased_at&quot;: &quot;1794677485292871194&quot;,
+        &quot;expires_at&quot;: &quot;1794681085292871194&quot;,
+        &quot;status&quot;: &quot;Active&quot;
+      }
+    ]
+  }
+]</pre></details><details><summary><span class="dot ok"></span>Bob buys inventory for 0.2 NEAR<small>Committed</small></summary><p class="mono">Local transaction: 2YVVi9wW25nc8soFWW5cYipjad23dSaNmN4oaaxwUmgo</p><pre>[
+  {
+    &quot;standard&quot;: &quot;recallpay&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;event&quot;: &quot;purchase&quot;,
+    &quot;data&quot;: [
+      {
+        &quot;receipt_id&quot;: &quot;inventory&quot;,
+        &quot;buyer_id&quot;: &quot;bob.test.near&quot;,
+        &quot;version_id&quot;: &quot;ccc42ee12168c20b1305dbeef8c82d0506f6d35393d546011586526e220aa9ea&quot;,
+        &quot;price&quot;: &quot;200000000000000000000000&quot;,
+        &quot;purchased_at&quot;: &quot;1794677487118994201&quot;,
+        &quot;expires_at&quot;: &quot;1794681087118994201&quot;,
+        &quot;status&quot;: &quot;Active&quot;
+      }
+    ]
+  }
+]</pre></details><details><summary><span class="dot ok"></span>Bob buys shipping data for 0.1 NEAR<small>Committed</small></summary><p class="mono">Local transaction: CoMqjK5C23aaJK2LQkbvfesPWsbmjqUA4wQx4a2T6uRd</p><pre>[
+  {
+    &quot;standard&quot;: &quot;recallpay&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;event&quot;: &quot;purchase&quot;,
+    &quot;data&quot;: [
+      {
+        &quot;receipt_id&quot;: &quot;shipping&quot;,
+        &quot;buyer_id&quot;: &quot;bob.test.near&quot;,
+        &quot;version_id&quot;: &quot;ef02b93df22f9c6f2e22ec0299b44840c02a4c8c220af81ee697cb86985b8033&quot;,
+        &quot;price&quot;: &quot;100000000000000000000000&quot;,
+        &quot;purchased_at&quot;: &quot;1794677488947118693&quot;,
+        &quot;expires_at&quot;: &quot;1794681088947118693&quot;,
+        &quot;status&quot;: &quot;Active&quot;
+      }
+    ]
+  }
+]</pre></details><details><summary><span class="dot ok"></span>Provider withdraws earned 0.6 NEAR before the recall<small>Committed</small></summary><p class="mono">Local transaction: B8PHWY2ekwPE7GETNobE2h9KBqet5m9Ln3Zq4b5WGbzh</p><pre>[
+  {
+    &quot;standard&quot;: &quot;recallpay&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;event&quot;: &quot;withdrawal_pending&quot;,
+    &quot;data&quot;: [
+      {
+        &quot;withdrawal_id&quot;: &quot;0&quot;,
+        &quot;receiver_id&quot;: &quot;seller-cash.test.near&quot;,
+        &quot;amount&quot;: &quot;600000000000000000000000&quot;
+      }
+    ]
+  },
+  {
+    &quot;standard&quot;: &quot;recallpay&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;event&quot;: &quot;withdrawal_paid&quot;,
+    &quot;data&quot;: [
+      {
+        &quot;withdrawal_id&quot;: &quot;0&quot;,
+        &quot;beneficiary&quot;: &quot;provider.test.near&quot;,
+        &quot;amount&quot;: &quot;600000000000000000000000&quot;
+      }
+    ]
+  }
+]</pre></details><details><summary><span class="dot ok"></span>Provider recalls inventory: stock was 8, not 80<small>Committed</small></summary><p class="mono">Local transaction: D4aL6nVj3JdHTUCxoiz79V4Hor2mVMVTb2WXzdnTeM3A</p><pre>[
+  {
+    &quot;standard&quot;: &quot;recallpay&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;event&quot;: &quot;version_recalled&quot;,
+    &quot;data&quot;: [
+      {
+        &quot;version_id&quot;: &quot;ccc42ee12168c20b1305dbeef8c82d0506f6d35393d546011586526e220aa9ea&quot;,
+        &quot;reason&quot;: &quot;Warehouse correction: solar-controller stock is 8, not 80.&quot;,
+        &quot;recalled_at&quot;: &quot;1794677495647904987&quot;
+      }
+    ]
+  }
+]</pre></details><details><summary><span class="dot reject"></span>Stale client tries to pay using recalled inventory<small>Expected rejection</small></summary><p class="mono">Local transaction: 97Jjn3cGyfGxaUXpvqoA6MCnKe5SZDKTD2ysHWv5i2mM</p><pre>[
+  {
+    &quot;ActionError&quot;: {
+      &quot;index&quot;: 0,
+      &quot;kind&quot;: {
+        &quot;FunctionCallError&quot;: {
+          &quot;ExecutionError&quot;: &quot;Smart contract panicked: ERR_DEPENDENCY_RECALLED&quot;
+        }
+      }
+    }
+  },
+  {
+    &quot;ActionError&quot;: {
+      &quot;index&quot;: 0,
+      &quot;kind&quot;: {
+        &quot;FunctionCallError&quot;: {
+          &quot;ExecutionError&quot;: &quot;Smart contract panicked: ERR_DEPENDENCY_RECALLED&quot;
+        }
+      }
+    }
+  }
+]</pre></details><details><summary><span class="dot ok"></span>Shipping estimate A: pay next action<small>Committed</small></summary><p class="mono">Local transaction: AFYcjPTgksNmDuJoQ45Lc36ftRKrUYfUXBBNK1kG2yjP</p><pre>[
+  {
+    &quot;standard&quot;: &quot;recallpay&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;event&quot;: &quot;action_paid&quot;,
+    &quot;data&quot;: [
+      {
+        &quot;buyer_id&quot;: &quot;alice.test.near&quot;,
+        &quot;recipient_id&quot;: &quot;processor.test.near&quot;,
+        &quot;amount&quot;: &quot;10000000000000000000000&quot;,
+        &quot;receipt_ids&quot;: [
+          &quot;shipping&quot;
+        ]
+      }
+    ]
+  }
+]</pre></details><details><summary><span class="dot ok"></span>Shipping estimate B: pay next action<small>Committed</small></summary><p class="mono">Local transaction: DvYnugkh9tRu4aFoYSsyxn7sNcEMdnPcvGqiaBAGeiMn</p><pre>[
+  {
+    &quot;standard&quot;: &quot;recallpay&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;event&quot;: &quot;action_paid&quot;,
+    &quot;data&quot;: [
+      {
+        &quot;buyer_id&quot;: &quot;bob.test.near&quot;,
+        &quot;recipient_id&quot;: &quot;processor.test.near&quot;,
+        &quot;amount&quot;: &quot;10000000000000000000000&quot;,
+        &quot;receipt_ids&quot;: [
+          &quot;shipping&quot;
+        ]
+      }
+    ]
+  }
+]</pre></details><details><summary><span class="dot ok"></span>Keeper claims alice&#39;s refund to its fixed beneficiary<small>Committed</small></summary><p class="mono">Local transaction: 8exzPTYigwyUH4kYXvsfwk3Qc96PXsFVgWUvTQ5k7d9B</p><pre>[
+  {
+    &quot;standard&quot;: &quot;recallpay&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;event&quot;: &quot;refund_credited&quot;,
+    &quot;data&quot;: [
+      {
+        &quot;buyer_id&quot;: &quot;alice.test.near&quot;,
+        &quot;receipt_id&quot;: &quot;inventory&quot;,
+        &quot;amount&quot;: &quot;200000000000000000000000&quot;
+      }
+    ]
+  }
+]</pre></details><details><summary><span class="dot ok"></span>alice withdraws refund as real NEAR<small>Committed</small></summary><p class="mono">Local transaction: 2PzrUmxTkZdSRPyduPmVowCh3RHNYaAmUubyiEQj96kK</p><pre>[
+  {
+    &quot;standard&quot;: &quot;recallpay&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;event&quot;: &quot;withdrawal_pending&quot;,
+    &quot;data&quot;: [
+      {
+        &quot;withdrawal_id&quot;: &quot;1&quot;,
+        &quot;receiver_id&quot;: &quot;alice-cash.test.near&quot;,
+        &quot;amount&quot;: &quot;200000000000000000000000&quot;
+      }
+    ]
+  },
+  {
+    &quot;standard&quot;: &quot;recallpay&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;event&quot;: &quot;withdrawal_paid&quot;,
+    &quot;data&quot;: [
+      {
+        &quot;withdrawal_id&quot;: &quot;1&quot;,
+        &quot;beneficiary&quot;: &quot;alice.test.near&quot;,
+        &quot;amount&quot;: &quot;200000000000000000000000&quot;
+      }
+    ]
+  }
+]</pre></details><details><summary><span class="dot ok"></span>Keeper claims bob&#39;s refund to its fixed beneficiary<small>Committed</small></summary><p class="mono">Local transaction: 6Tk9gm7CQSb7QrnGQzKVSL6bgtZ3FzSAaeo7eKS3KzxQ</p><pre>[
+  {
+    &quot;standard&quot;: &quot;recallpay&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;event&quot;: &quot;refund_credited&quot;,
+    &quot;data&quot;: [
+      {
+        &quot;buyer_id&quot;: &quot;bob.test.near&quot;,
+        &quot;receipt_id&quot;: &quot;inventory&quot;,
+        &quot;amount&quot;: &quot;200000000000000000000000&quot;
+      }
+    ]
+  }
+]</pre></details><details><summary><span class="dot ok"></span>bob withdraws refund as real NEAR<small>Committed</small></summary><p class="mono">Local transaction: 5ChJrhJer6PQcomtz6nr8Rw1RLdBL2ivu5h57qyjDzQg</p><pre>[
+  {
+    &quot;standard&quot;: &quot;recallpay&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;event&quot;: &quot;withdrawal_pending&quot;,
+    &quot;data&quot;: [
+      {
+        &quot;withdrawal_id&quot;: &quot;2&quot;,
+        &quot;receiver_id&quot;: &quot;bob-cash.test.near&quot;,
+        &quot;amount&quot;: &quot;200000000000000000000000&quot;
+      }
+    ]
+  },
+  {
+    &quot;standard&quot;: &quot;recallpay&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;event&quot;: &quot;withdrawal_paid&quot;,
+    &quot;data&quot;: [
+      {
+        &quot;withdrawal_id&quot;: &quot;2&quot;,
+        &quot;beneficiary&quot;: &quot;bob.test.near&quot;,
+        &quot;amount&quot;: &quot;200000000000000000000000&quot;
+      }
+    ]
+  }
+]</pre></details><details><summary><span class="dot reject"></span>Repeated refund attempt<small>Expected rejection</small></summary><p class="mono">Local transaction: HVaV7usZNDxFAa6yQk5uFPdnxZjNNTTXyg37TzaptZfK</p><pre>[
+  {
+    &quot;ActionError&quot;: {
+      &quot;index&quot;: 0,
+      &quot;kind&quot;: {
+        &quot;FunctionCallError&quot;: {
+          &quot;ExecutionError&quot;: &quot;Smart contract panicked: ERR_ALREADY_SETTLED&quot;
+        }
+      }
+    }
+  },
+  {
+    &quot;ActionError&quot;: {
+      &quot;index&quot;: 0,
+      &quot;kind&quot;: {
+        &quot;FunctionCallError&quot;: {
+          &quot;ExecutionError&quot;: &quot;Smart contract panicked: ERR_ALREADY_SETTLED&quot;
+        }
+      }
+    }
+  }
+]</pre></details>
+  <h2>What this proves</h2><ul><li>The demo vault has no upgrade or deletion access key</li><li>Provider earned fees were actually paid out before recall</li><li>Every purchase has fully locked coverage</li><li>All three affected jobs paused, including the derived job</li><li>Both unrelated shipping jobs remain ready</li><li>Onchain gate rejects the stale client payment</li><li>Blocked payment created no processor credit</li><li>Shipping estimate A completed its next paid action</li><li>Shipping estimate B completed its next paid action</li><li>Unrelated jobs paid exactly 0.02 NEAR in total</li><li>alice was credited exactly its 0.2 NEAR fee</li><li>alice&#39;s refund arrived at its separate wallet</li><li>bob was credited exactly its 0.2 NEAR fee</li><li>bob&#39;s refund arrived at its separate wallet</li><li>Duplicate claim rejected</li><li>All remaining settled liabilities remain backed</li></ul>
+  <h2>Scope and limits</h2><p>Synthetic warehouse inventory and shipping fixtures. Two scripted buyer agents; no language model is used.</p><ul><li>Provider-declared recalls only. Data truth is not automatically verified.</li><li>Coverage refunds the purchase fee; gas and storage fees are excluded.</li><li>Only participating jobs with complete declared dependencies can be paused.</li><li>A recall cannot undo actions authorized before it, external transactions, or delivered work.</li><li>Native NEAR only. No crosschain or confidential execution integration is claimed.</li><li>A failed withdrawal callback can leave a pending operation; no timeout-based release is provided.</li><li>Prototype has no production audit or demand validation.</li></ul>
+  <footer class="muted">Generated from results/demo.json after an actual NEAR Sandbox run. Every run creates fresh local accounts. No mainnet funds or customer data are used.</footer></main></html>

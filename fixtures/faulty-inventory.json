@@ -1,0 +1,1 @@
+{"dataset":"warehouse-stock","revision":"2026-11-02-v1","items":[{"sku":"sensor-kit","available":120},{"sku":"solar-controller","available":80}],"note":"Demonstration fixture: provider later corrects solar-controller stock to 8."}
